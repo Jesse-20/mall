@@ -1,12 +1,15 @@
 <template>
-  <div class="container">
-    <div class="test01"></div>
-    <h1>jeci</h1>
+  <div>
+    <slogan></slogan>
   </div>
 </template>
 <script>
+import slogan from "./../components/slogan.vue";
 export default {
   name: "index",
+  components: {
+    slogan,
+  },
 };
 </script>
 <style scoped>

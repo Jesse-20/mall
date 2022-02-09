@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <!-- <div class="container">
     <div class="footer">
       <div class="img"><img src="" alt="logo" /></div>
       <div class="info"><p>如果您有任何疑问，请及时通过电话与我们联系</p></div>
@@ -10,7 +10,8 @@
     <div class="copyright">
       Copyright ©2020<span class="domain">jesse.com</span> All Rights Reserved.
     </div>
-  </div>
+  </div> -->
+  <div></div>
 </template>
 <script>
 export default {
