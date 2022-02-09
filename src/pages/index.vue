@@ -11,7 +11,7 @@
   </div>
 </template>
 <script>
-import slogan from "./../components/slogan.vue";
+import slogan from "./../components/Slogan";
 export default {
   name: "index",
   components: {
@@ -29,6 +29,7 @@ export default {
     div {
       height: 200px;
       border: 1px solid #111111;
+      margin-top: 20px;
     }
   }
 }
