@@ -26,25 +26,30 @@ export default {
 <style lang="scss" scoped>
 @import "./../assets/scss/mixin.scss";
 .service {
+  padding-top: 30px;
   color: #666666;
   font-size: 16px;
+  border-bottom: 1px solid #ffffff;
   .part1 {
     position: relative;
     display: inline-block;
     width: 24.9%;
     border-right: 1px solid #e5e5e5;
-    text-align: center;
     .icon-setting {
       @include bgImg(20px, 20px, "/images/icon-setting.png");
+      margin-left: 100px;
     }
     .icon-7days {
       @include bgImg(20px, 20px, "/images/icon-7day.png");
+      margin-left: 100px;
     }
     .icon-15days {
       @include bgImg(20px, 20px, "/images/icon-15day.png");
+      margin-left: 100px;
     }
     .icon-email {
       @include bgImg(20px, 20px, "/images/icon-post.png");
+      margin-left: 100px;
     }
     span {
       display: inline-block;

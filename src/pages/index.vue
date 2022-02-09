@@ -1,6 +1,12 @@
 <template>
-  <div>
-    <slogan></slogan>
+  <div class="index">
+    <div class="main">
+      <div></div>
+      <div></div>
+      <div></div>
+      <slogan></slogan>
+      <div></div>
+    </div>
   </div>
 </template>
 <script>
@@ -12,5 +18,15 @@ export default {
   },
 };
 </script>
-<style scoped>
+<style lang="scss" scoped>
+.main {
+  width: 1226px;
+  margin-right: auto;
+  margin-left: auto;
+  background-color: #111111;
+  div {
+    height: 200px;
+    border: 1px solid #ffffff;
+  }
+}
 </style>
