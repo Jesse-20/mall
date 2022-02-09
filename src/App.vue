@@ -1,6 +1,5 @@
 <template>
   <div>
-    <router-link to="/index">首页</router-link>
     <router-view></router-view>
   </div>
 </template>
@@ -12,5 +11,6 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
+@import "./assets/scss/reset.scss";
 </style>
