@@ -3,7 +3,7 @@
     <div class="footer">
       <div class="footer-logo">
         <img src="" alt="" />
-        <p>最细商城</p>
+        <p>坠新商城</p>
       </div>
       <div class="footer-link">
         <a href="javascript:;" target="_blank">jesse主页</a><span>|</span>

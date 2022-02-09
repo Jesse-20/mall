@@ -26,7 +26,7 @@ export default {
 <style lang="scss" scoped>
 @import "./../assets/scss/mixin.scss";
 .service {
-  padding-top: 30px;
+  padding: 30px 0;
   color: #666666;
   font-size: 16px;
   border-bottom: 1px solid #ffffff;

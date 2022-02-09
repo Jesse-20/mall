@@ -1,9 +1,11 @@
 <template>
   <div class="index">
     <div class="main">
-      <div></div>
-      <div></div>
-      <div></div>
+      <div class="temp">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
       <slogan></slogan>
     </div>
   </div>
@@ -22,10 +24,12 @@ export default {
   width: 1226px;
   margin-right: auto;
   margin-left: auto;
-  background-color: #111111;
-  div {
-    height: 200px;
-    border: 1px solid #ffffff;
+  background-color: #ffffff;
+  .temp {
+    div {
+      height: 200px;
+      border: 1px solid #111111;
+    }
   }
 }
 </style>
