@@ -1,17 +1,22 @@
 <template>
-  <!-- <div class="container">
+  <div>
     <div class="footer">
-      <div class="img"><img src="" alt="logo" /></div>
-      <div class="info"><p>如果您有任何疑问，请及时通过电话与我们联系</p></div>
-      <div class="tel"><p>电话：+8613313341334</p></div>
-      <div class="location"><span>中国广东省广州市</span></div>
-      <div class="email"><span>Jesse@email.com</span></div>
+      <div class="footer-logo">
+        <img src="" alt="" />
+        <p>最细商城</p>
+      </div>
+      <div class="footer-link">
+        <a href="javascript:;" target="_blank">jesse主页</a><span>|</span>
+        <a href="javascript:;" target="_blank">售后服务</a><span>|</span>
+        <a href="javascript:;" target="_blank">关于我们</a><span>|</span>
+        <a href="javascript:;" target="_blank">Vue+SpringBoot</a>
+      </div>
+      <div class="copyright">
+        Copyright ©2022<span class="domain">jesse.design.com</span> All Rights
+        Reserved.
+      </div>
     </div>
-    <div class="copyright">
-      Copyright ©2020<span class="domain">jesse.com</span> All Rights Reserved.
-    </div>
-  </div> -->
-  <div></div>
+  </div>
 </template>
 <script>
 export default {
@@ -19,47 +24,36 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-@import "./../assets/scss/config.scss";
-.container {
-  background-color: $Wcolor;
-  .footer {
-    margin-left: auto;
-    margin-right: auto;
-    width: $min-width;
-    height: 520px;
-    .img {
-      //to-do
-      padding-top: 30px;
-      margin-left: 80px;
-    }
-    .info {
-      padding-top: 30px;
-      margin-left: 80px;
-      font-size: $fontJ;
-    }
-    .tel {
-      padding-top: 30px;
-      margin-left: 80px;
-      font-size: $fontC;
-    }
-    .location {
-      padding-top: 30px;
-      margin-left: 80px;
-      font-size: $fontJ;
-    }
-    .email {
-      padding-top: 30px;
-      margin-left: 80px;
-      font-size: $fontI;
-      color: $Bcolor;
+.footer {
+  height: 234px;
+  border-top: 2px solid #ff66008e;
+  background-color: #333;
+  color: #999999;
+  font-size: 16px;
+  text-align: center;
+  .footer-logo {
+    margin-top: 46px;
+    margin-bottom: 31px;
+    img {
+      width: 53px;
+      height: 36px;
+      margin-bottom: 13px;
     }
   }
+  .footer-link {
+    a {
+      color: #999999;
+      display: inline-block;
+    }
+    span {
+      margin: 0 10px;
+    }
+    margin-bottom: 13px;
+  }
   .copyright {
-    text-align: center;
-    font-size: 20px;
-    color: $Gcolor;
-    padding-top: 30px;
-    margin-left: 80px;
+    .domain {
+      color: #ffffff;
+    }
   }
 }
 </style>

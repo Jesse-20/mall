@@ -5,7 +5,6 @@
       <div></div>
       <div></div>
       <slogan></slogan>
-      <div></div>
     </div>
   </div>
 </template>
