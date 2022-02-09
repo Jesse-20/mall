@@ -1,6 +1,5 @@
 <template>
   <div>
-    123
     <router-link to="/index">首页</router-link>
     <router-view></router-view>
   </div>
