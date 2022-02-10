@@ -105,7 +105,7 @@ export default {
   width: $min-width;
   margin-right: auto;
   margin-left: auto;
-  background-color: #ffffff;
+  background-color: $colorC;
   .swiper {
     position: relative;
     height: 451px;
