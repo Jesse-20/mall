@@ -1,23 +1,27 @@
 <template>
   <div class="index">
     <div class="main">
-      <div class="temp">
-        <div class="swiper">
-          <swiper :options="swiperOption">
-            <swiper-slide v-for="(item, index) in swiperSlides" :key="index">
-              <!-- to-do产品的路由 -->
-              <a href="#"><img :src="item.img" alt="" /></a>
-            </swiper-slide>
-            <!-- Optional controls -->
-            <div class="swiper-pagination" slot="pagination"></div>
-            <div class="swiper-button-prev" slot="button-prev"></div>
-            <div class="swiper-button-next" slot="button-next"></div>
-          </swiper>
-        </div>
-        <div>details</div>
-        <div>phone</div>
-        <div>pad</div>
+      <!-- to-do寻找轮播的图片 -->
+      <div class="swiper">
+        <swiper :options="swiperOption">
+          <swiper-slide v-for="(item, index) in swiperSlides" :key="index">
+            <!-- to-do产品的路由 -->
+            <a href="#"><img :src="item.img" alt="" /></a>
+          </swiper-slide>
+          <!-- Optional controls -->
+          <div class="swiper-pagination" slot="pagination"></div>
+          <div class="swiper-button-prev" slot="button-prev"></div>
+          <div class="swiper-button-next" slot="button-next"></div>
+        </swiper>
       </div>
+      <div class="nav">
+        <ul v-for="(item, index) in ProductList" :key="index">
+          <li>{{ item }}</li>
+        </ul>
+      </div>
+      <div>details</div>
+      <div>phone</div>
+      <div>pad</div>
       <slogan></slogan>
     </div>
   </div>
@@ -39,7 +43,7 @@ export default {
   data() {
     return {
       swiperOption: {
-        autoplay: true,
+        autoplay: false, //自动轮播的开关
         loop: true,
         effect: "cube",
         cubeEffect: {
@@ -60,40 +64,79 @@ export default {
       swiperSlides: [
         {
           id: "42",
-          img: "/images/slider/slide-1.jpg",
+          img: "/images/slide.png",
         },
         {
           id: "45",
-          img: "/images/slider/slide-2.jpg",
+          img: "/images/slide.png",
         },
         {
           id: "46",
-          img: "/images/slider/slide-3.jpg",
+          img: "/images/slide.png",
         },
         {
           id: "42",
-          img: "/images/slider/slide-1.jpg",
+          img: "/images/slide.png",
         },
         {
           id: "42",
-          img: "/images/slider/slide-1.jpg",
+          img: "/images/slide.png",
         },
       ],
+      ProductList: [],
     };
+  },
+  mounted() {
+    this.getProductList();
+  },
+  methods: {
+    getProductList() {
+      this.axios.get("/productList").then((res) => {
+        this.ProductList = res.data.data;
+      });
+    },
   },
 };
 </script>
 <style lang="scss" scoped>
+@import "./../assets/scss/config.scss";
+@import "./../assets/scss/mixin.scss";
 .main {
-  width: 1226px;
+  width: $min-width;
   margin-right: auto;
   margin-left: auto;
   background-color: #ffffff;
   .swiper {
+    position: relative;
     height: 451px;
     img {
       width: 100%;
       height: 100%;
+    }
+    .swiper-button-prev {
+      margin-left: 179px;
+    }
+  }
+  .nav {
+    z-index: 10;
+    position: absolute;
+    height: 451px;
+    width: 179px;
+    top: 86px;
+    background-color: #333;
+    ul {
+      li {
+        height: 90px;
+        font-size: $fontI;
+        color: $colorB;
+        text-align: center;
+        line-height: 79px;
+        &:after {
+          content: "";
+          @include bgImg(12px, 12px, "/images/icon-arrow.png");
+          margin-left: 15px;
+        }
+      }
     }
   }
 }
