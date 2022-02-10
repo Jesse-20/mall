@@ -4,7 +4,7 @@ import axios from "axios"
 import VueAxios from "vue-axios"
 import App from './App.vue'
 
-//根据前端的跨域方式做调整
+//前端的跨域方式
 axios.defaults.baseURL = 'https://www.fastmock.site/mock/d4730d54d71131d03b27e9a2dbb0fd79/api';
 //请求时间限制8s
 axios.defaults.timeout = 8000;
