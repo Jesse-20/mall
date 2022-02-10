@@ -24,6 +24,7 @@
       <div>pad</div>
       <slogan></slogan>
     </div>
+    <float-ball></float-ball>
   </div>
 </template>
 <script>
@@ -33,12 +34,14 @@ import "swiper/css/swiper.css";
 import { Swiper, SwiperSlide } from "vue-awesome-swiper";
 
 import slogan from "./../components/Slogan";
+import FloatBall from "./../components/FloatBall";
 export default {
   name: "index",
   components: {
     slogan,
     Swiper,
     SwiperSlide,
+    FloatBall,
   },
   data() {
     return {
