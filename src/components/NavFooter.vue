@@ -2,8 +2,8 @@
   <div>
     <div class="footer">
       <div class="footer-logo">
-        <img src="" alt="" />
-        <p>坠新商城</p>
+        <img src="/images/storeFooter.png" alt="" />
+        <p>最新商城</p>
       </div>
       <div class="footer-link">
         <a href="javascript:;" target="_blank">jesse主页</a><span>|</span>
@@ -24,6 +24,7 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+@import "./../assets/scss/config.scss";
 .footer {
   height: 234px;
   border-top: 2px solid #ff66008e;
@@ -38,6 +39,9 @@ export default {
       width: 53px;
       height: 36px;
       margin-bottom: 13px;
+    }
+    p {
+      color: $colorA;
     }
   }
   .footer-link {

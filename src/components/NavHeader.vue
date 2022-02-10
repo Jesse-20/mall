@@ -3,7 +3,7 @@
     <div class="header">
       <div class="left-info">
         <a href="/#/index">首页</a>
-        <span>坠新商城欢迎您！</span>
+        <span>最新商城欢迎您！</span>
       </div>
       <div class="right-info">
         <a href="" v-if="userAction">请登录</a><a v-else>{{ userName }}</a
@@ -34,7 +34,7 @@ export default {
 .container {
   background-color: #333;
   .header {
-    width: 1226px;
+    width: $min-width;
     margin-right: auto;
     margin-left: auto;
     height: 36px;

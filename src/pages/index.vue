@@ -2,9 +2,10 @@
   <div class="index">
     <div class="main">
       <div class="temp">
-        <div></div>
-        <div></div>
-        <div></div>
+        <div>swppier</div>
+        <div>details</div>
+        <div>phone</div>
+        <div>pad</div>
       </div>
       <slogan></slogan>
     </div>
