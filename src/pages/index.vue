@@ -7,8 +7,9 @@
       <div class="swiper">
         <swiper :options="swiperOption">
           <swiper-slide v-for="(item, index) in swiperSlides" :key="index">
-            <!-- to-do产品的路由 -->
-            <a href="#"><img :src="item.img" alt="" /></a>
+            <a :href="'/#/product/' + item.id"
+              ><img :src="item.img" alt=""
+            /></a>
           </swiper-slide>
           <!-- Optional controls -->
           <div class="swiper-pagination" slot="pagination"></div>
@@ -91,19 +92,11 @@ export default {
           img: "/images/slide.png",
         },
       ],
-      ProductList: [],
+      ProductList: ["phone", "pad", "book", "details", "model"],
     };
   },
-  mounted() {
-    this.getProductList();
-  },
-  methods: {
-    getProductList() {
-      this.axios.get("/productList").then((res) => {
-        this.ProductList = res.data.data;
-      });
-    },
-  },
+  mounted() {},
+  methods: {},
 };
 </script>
 <style lang="scss" scoped>
@@ -116,7 +109,7 @@ export default {
   background-color: $colorC;
   .swiper {
     position: relative;
-    height: 451px;
+    height: 394.61px;
     img {
       width: 100%;
       height: 100%;
@@ -128,14 +121,14 @@ export default {
   .nav {
     z-index: 10;
     position: absolute;
-    height: 451px;
+    height: 394.61px;
     width: 179px;
     top: 86px;
     background-color: #333;
     ul {
       li {
         cursor: pointer;
-        height: 90px;
+        height: 20%;
         font-size: $fontI;
         color: $colorB;
         text-align: center;
@@ -144,6 +137,9 @@ export default {
           content: "";
           @include bgImg(12px, 12px, "/images/icon-arrow.png");
           margin-left: 15px;
+        }
+        &:hover {
+          background-color: $Wcolor;
         }
       }
     }

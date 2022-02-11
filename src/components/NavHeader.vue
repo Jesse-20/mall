@@ -6,8 +6,9 @@
         <span>最新商城欢迎您！</span>
       </div>
       <div class="right-info">
-        <a href="" v-if="!userName">请登录</a><a v-else>{{ userName }}</a
-        ><a href="" v-if="!userName">注册</a><a href="">我的订单</a
+        <a href="/#/login" v-if="!userName">请登录</a
+        ><a v-else>{{ userName }}</a
+        ><a href="/#/login" v-if="!userName">注册</a><a href="">我的订单</a
         ><a href="">客服服务</a>
         <a href="">网站导航</a>
         <!-- 网页导航栏的动态表示方法需要进行实现 -->

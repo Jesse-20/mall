@@ -1,9 +1,9 @@
 <template>
-  <div>商品所属id：{{ $route.params.id }}</div>
+  <div>cart</div>
 </template>
 <script>
 export default {
-  name: "product",
+  name: "cart",
 };
 </script>
 <style>
