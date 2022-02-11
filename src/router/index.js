@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from "vue-router"//导入vue-router
 import Index from "./../pages/index"
 import Home from "./../pages/home"
+import Product from "./../pages/product"
 
 Vue.use(VueRouter);//安装vue-router插件
 
@@ -30,5 +31,10 @@ export default new VueRouter({
             },
             ]
         },
+        {
+            path: '/product',
+            name: 'product',
+            component:Product,
+        }
     ]
 })

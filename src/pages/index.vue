@@ -1,6 +1,8 @@
 <template>
   <div class="index">
+    <!-- 主网页主题题部分 -->
     <div class="main">
+      <!-- 轮播图部分开始 -->
       <!-- to-do寻找轮播的图片 -->
       <div class="swiper">
         <swiper :options="swiperOption">
@@ -14,17 +16,20 @@
           <div class="swiper-button-next" slot="button-next"></div>
         </swiper>
       </div>
+      <!-- 轮播图部分结束 -->
+      <!-- 轮播图左侧导航栏开始 -->
       <div class="nav">
         <ul v-for="(item, index) in ProductList" :key="index">
           <li>{{ item }}</li>
         </ul>
       </div>
+      <!-- 轮播图左侧导航栏结束 -->
       <div>details</div>
       <div>phone</div>
       <div>pad</div>
       <slogan></slogan>
+      <float-ball></float-ball>
     </div>
-    <float-ball></float-ball>
   </div>
 </template>
 <script>
@@ -129,6 +134,7 @@ export default {
     background-color: #333;
     ul {
       li {
+        cursor: pointer;
         height: 90px;
         font-size: $fontI;
         color: $colorB;
