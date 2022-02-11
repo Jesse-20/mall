@@ -26,8 +26,9 @@
       </div>
       <!-- 轮播图左侧导航栏结束 -->
       <!-- 热卖推荐产品开始 -->
-      <div class="hot">
+      <div class="hot clearfix">
         <h1 class="hot-title">hot-put</h1>
+        <a href="javascript:;"><h1 class="forMore">查看更多</h1></a>
         <!-- to-do获取商品的图片和路由 -->
         <div class="imgshow">
           <div><a href=""></a></div>
@@ -35,10 +36,22 @@
           <div><a href=""></a></div>
           <div><a href=""></a></div>
         </div>
+        <div class="imgshow2">
+          <div><a href=""></a></div>
+          <div><a href=""></a></div>
+          <div><a href=""></a></div>
+          <div><a href=""></a></div>
+        </div>
       </div>
       <!-- 热卖推荐产品结束 -->
-      <div>phone</div>
+      <!-- banner部分开始 -->
+      <div class="banner">
+        <img src=" " alt="" />
+      </div>
+      <!-- banner部分结束 -->
+      <!--  -->
       <div>pad</div>
+      <!--  -->
       <slogan></slogan>
       <float-ball></float-ball>
     </div>
@@ -113,6 +126,18 @@ export default {
 <style lang="scss" scoped>
 @import "./../assets/scss/config.scss";
 @import "./../assets/scss/mixin.scss";
+//清除浮动
+.clearfix::after,
+.clearfix::before {
+  content: "";
+  display: table;
+}
+.clearfix::after {
+  clear: both;
+}
+.clearfix {
+  *zoom: 1;
+}
 .main {
   width: $min-width;
   margin-right: auto;
@@ -158,22 +183,74 @@ export default {
   .hot {
     margin-top: 2px;
     .hot-title {
+      float: left;
       color: $colorA;
       &:after {
         content: "";
         @include bgImg(20px, 20px, "/images/hot.png");
       }
     }
+    .forMore {
+      margin-top: 5px;
+      margin-right: 20px;
+      position: relative;
+      float: right;
+      color: $colorB;
+      font-size: $fontG;
+      &:after {
+        position: absolute;
+        content: "";
+        @include bgImg(20px, 20px, "/images/seeMore.png");
+        top: 4px;
+      }
+      &:hover {
+        color: $colorA;
+      }
+    }
     .imgshow {
+      margin-top: 31px;
       display: flex;
       align-items: center;
+      transition: all 0.2s linear;
       div {
-        margin-top: 2px;
+        margin-top: 8px;
         height: 180px;
         width: 20%;
         border: 1px solid $colorB;
         margin-left: 47.448px;
+        &:hover {
+          cursor: pointer;
+          box-shadow: 0 15px 30px rgb(0, 0, 0, 0.1);
+          transform: translate(0, -2px, 0);
+        }
       }
+    }
+    .imgshow2 {
+      display: flex;
+      align-items: center;
+      margin-top: 8px;
+      transition: all 0.2s linear;
+      div {
+        margin-top: 8px;
+        height: 180px;
+        width: 20%;
+        border: 1px solid $colorB;
+        margin-left: 47.448px;
+        &:hover {
+          cursor: pointer;
+          box-shadow: 0 15px 30px rgb(0, 0, 0, 0.1);
+          transform: translate(0, -2px, 0);
+        }
+      }
+    }
+  }
+  .banner {
+    margin-top: 16px;
+    height: 100px;
+    border: 1px solid black;
+    img {
+      width: 100%;
+      height: 100%;
     }
   }
 }

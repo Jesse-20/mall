@@ -6,3 +6,12 @@
     background: url($img) no-repeat center;
     background-size: $size;
 }
+
+//清除浮动的复用
+@mixin clear() {
+    content: "";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
