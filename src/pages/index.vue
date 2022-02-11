@@ -49,9 +49,30 @@
         <img src=" " alt="" />
       </div>
       <!-- banner部分结束 -->
-      <!--  -->
-      <div>pad</div>
-      <!--  -->
+      <!--最新产品部分开始-->
+      <div class="newProduct">
+        <h1 class="new-title">new-put</h1>
+        <div class="item-swiper">
+          <swiper :options="swiperOption">
+            <swiper-slide><img src="/images/slide.png" alt="" /></swiper-slide>
+            <swiper-slide
+              ><img src="/images/product/gallery-3.png" alt=""
+            /></swiper-slide>
+            <swiper-slide
+              ><img src="/images/product/gallery-4.png" alt=""
+            /></swiper-slide>
+            <swiper-slide
+              ><img src="/images/product/gallery-5.jpg" alt=""
+            /></swiper-slide>
+            <swiper-slide
+              ><img src="/images/product/gallery-6.jpg" alt=""
+            /></swiper-slide>
+            <!-- Optional controls -->
+            <div class="swiper-pagination" slot="pagination"></div>
+          </swiper>
+        </div>
+      </div>
+      <!--最新产品部分结束-->
       <slogan></slogan>
       <float-ball></float-ball>
     </div>
@@ -251,6 +272,22 @@ export default {
     img {
       width: 100%;
       height: 100%;
+    }
+  }
+  .newProduct {
+    .new-title {
+      color: $colorA;
+      margin-top: 4px;
+      &:after {
+        content: "";
+        @include bgImg(20px, 20px, "/images/new-product.png");
+      }
+    }
+    .item-swiper {
+      margin: 10px auto 52px;
+      img {
+        width: 100%;
+      }
     }
   }
 }
