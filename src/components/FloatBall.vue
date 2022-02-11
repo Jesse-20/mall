@@ -5,7 +5,7 @@
       <div class="num">(0)</div>
     </a>
     <div class="backToTop" title="回到顶部">
-      <a href="#">
+      <a href="#" @click="backToTop">
         <!-- 希望将回到顶部和购物车的图标添加到一起 -->
         <!-- <img class="img1" src="/images/icon-upTo.png" alt="" /> -->
         <!-- to-do动画的交互 -->
@@ -17,6 +17,14 @@
 <script>
 export default {
   name: "floatball",
+  methods: {
+    backToTop() {
+      //实现方式一回到顶部,scrollTop属性表示被隐藏在内容区域上方的像素数，元素未滚动时，即为顶部
+      //document.body.scrollTop = document.documentElement.scrollTop = 0;
+      //实现方式二,scrollTo(x,y)设置值为0，0即可回到左上角
+      scrollTo(0, 0);
+    },
+  },
 };
 </script>
 <style lang="scss" scoped>
