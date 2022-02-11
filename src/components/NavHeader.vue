@@ -7,7 +7,7 @@
       </div>
       <div class="right-info">
         <a href="/#/login" v-if="!userName">请登录</a
-        ><a v-else>{{ userName }}</a
+        ><span v-else>{{ userName }}<a href="javascript:;">退出</a></span
         ><a href="/#/login" v-if="!userName">注册</a><a href="">我的订单</a
         ><a href="">客服服务</a>
         <a href="">网站导航</a>
@@ -65,6 +65,9 @@ export default {
     .right-info {
       float: right;
       line-height: 36px;
+      span {
+        color: #a4a4a4;
+      }
       a {
         margin-right: 20px;
         cursor: pointer;

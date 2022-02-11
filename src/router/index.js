@@ -31,22 +31,22 @@ export default new VueRouter({
                 name: 'index',
                 component:Index,
             },
+            {
+                path: '/product/:id',
+                name: 'product',
+                component:Product,
+            },
+            {
+                path: '/login',
+                name: 'login',
+                component:Login,
+            },
+            {
+                path: '/cart',
+                name: 'cart',
+                component:Cart,
+            }
             ]
         },
-        {
-            path: '/product/:id',
-            name: 'product',
-            component:Product,
-        },
-        {
-            path: '/login',
-            name: 'login',
-            component:Login,
-        },
-        {
-            path: '/cart',
-            name: 'cart',
-            component:Cart,
-        }
     ]
 })
