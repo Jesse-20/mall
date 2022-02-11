@@ -25,7 +25,18 @@
         </ul>
       </div>
       <!-- 轮播图左侧导航栏结束 -->
-      <div>details</div>
+      <!-- 热卖推荐产品开始 -->
+      <div class="hot">
+        <h1 class="hot-title">hot-put</h1>
+        <!-- to-do获取商品的图片和路由 -->
+        <div class="imgshow">
+          <div><a href=""></a></div>
+          <div><a href=""></a></div>
+          <div><a href=""></a></div>
+          <div><a href=""></a></div>
+        </div>
+      </div>
+      <!-- 热卖推荐产品结束 -->
       <div>phone</div>
       <div>pad</div>
       <slogan></slogan>
@@ -141,6 +152,27 @@ export default {
         &:hover {
           background-color: $Wcolor;
         }
+      }
+    }
+  }
+  .hot {
+    margin-top: 2px;
+    .hot-title {
+      color: $colorA;
+      &:after {
+        content: "";
+        @include bgImg(20px, 20px, "/images/hot.png");
+      }
+    }
+    .imgshow {
+      display: flex;
+      align-items: center;
+      div {
+        margin-top: 2px;
+        height: 180px;
+        width: 20%;
+        border: 1px solid $colorB;
+        margin-left: 47.448px;
       }
     }
   }
