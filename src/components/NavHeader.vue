@@ -2,7 +2,7 @@
   <div class="container">
     <div class="header">
       <div class="left-info">
-        <a href="/#/index">首页</a>
+        <a href="/#/index" class="goToIndex">首页</a>
         <span>最新商城欢迎您！</span>
       </div>
       <div class="right-info">
@@ -51,6 +51,9 @@ export default {
       font-size: $fontJ;
     }
     .left-info {
+      .goToIndex {
+        color: $colorA;
+      }
       float: left;
       line-height: 36px;
       a {

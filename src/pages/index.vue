@@ -229,7 +229,7 @@ export default {
       }
     }
     .imgshow {
-      margin-top: 31px;
+      margin-top: 32px;
       display: flex;
       align-items: center;
       transition: all 0.2s linear;

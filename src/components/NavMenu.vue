@@ -42,16 +42,16 @@ export default {
     float: right;
     line-height: 50px;
     font-size: $fontH;
-    margin-right: -250px;
     input {
       height: 20px;
     }
     &:after {
       content: "";
       @include bgImg(20px, 20px, "/images/icon-search.png");
+      border-left: 1px solid $Gcolor;
       display: block;
       position: absolute;
-      right: 8px;
+      right: 3px;
       top: 16px;
       cursor: pointer;
     }
