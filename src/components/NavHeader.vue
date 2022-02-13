@@ -7,9 +7,12 @@
       </div>
       <div class="right-info">
         <a href="/#/login" v-if="!userName">请登录</a
-        ><span v-else>{{ userName }}<a href="javascript:;">退出</a></span
-        ><a href="/#/login" v-if="!userName">注册</a><a href="">我的订单</a
-        ><a href="">客服服务</a>
+        ><span v-else
+          >{{ userName }}&nbsp;&nbsp;&nbsp;&nbsp;<a href="javascript:;"
+            >退出</a
+          ></span
+        ><a href="/#/regist" v-if="!userName">注册</a
+        ><a href="/#/orderList">我的订单</a><a href="">客服服务</a>
         <a href="">网站导航</a>
         <!-- 网页导航栏的动态表示方法需要进行实现 -->
       </div>
@@ -31,7 +34,7 @@ export default {
   methods: {
     getUsername() {
       this.axios.post("/login").then((res) => {
-        this.userName = res.data.data[0].username;
+        this.userName = res.data.data[0].username.name;
       });
     },
   },
@@ -69,6 +72,7 @@ export default {
       float: right;
       line-height: 36px;
       span {
+        font-size: 14px;
         color: #a4a4a4;
       }
       a {

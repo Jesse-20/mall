@@ -5,6 +5,8 @@ import Home from "./../pages/home"
 import Product from "./../pages/product"
 import Login from "./../pages/login"
 import Cart from "./../pages/cart"
+import Regist from './../pages/regist'
+import OrderList from "./../pages/orderList"
 
 Vue.use(VueRouter);//安装vue-router插件
 
@@ -13,7 +15,7 @@ VueRouter.prototype.push = function push(location, onResolve, onReject) {
     if (onResolve || onReject) {
         return originalPush.call(this, location, onResolve, onReject)
     }
-    return originalPush.call(this,location).catch(err=>err)
+    return originalPush.call(this, location).catch(err => err)
 }
 
 
@@ -21,32 +23,42 @@ VueRouter.prototype.push = function push(location, onResolve, onReject) {
 export default new VueRouter({
     routes: [
         {
-        path: '/',
-        name: 'home',
-        component: Home,
-        redirect: '/index',
-        children: [
-            {
-                path: '/index',
-                name: 'index',
-                component:Index,
-            },
-            {
-                path: '/product/:id',
-                name: 'product',
-                component:Product,
-            },
-            {
-                path: '/login',
-                name: 'login',
-                component:Login,
-            },
-            {
-                path: '/cart',
-                name: 'cart',
-                component:Cart,
-            }
+            path: '/',
+            name: 'home',
+            component: Home,
+            redirect: '/index',
+            children: [
+                {
+                    path: '/index',
+                    name: 'index',
+                    component: Index,
+                },
+                {
+                    path: '/product/:id',
+                    name: 'product',
+                    component: Product,
+                },
+                {
+                    path: '/cart',
+                    name: 'cart',
+                    component: Cart,
+                },
+                {
+                    path: '/orderList',
+                    name: 'orderList',
+                    component: OrderList,
+                }
             ]
         },
+        {
+            path: '/login',
+            name: 'login',
+            component: Login,
+        },
+        {
+            path: '/regist',
+            name: 'regist',
+            component: Regist,
+        }
     ]
 })
