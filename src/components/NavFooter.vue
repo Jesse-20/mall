@@ -6,9 +6,10 @@
         <p>最新商城</p>
       </div>
       <div class="footer-link">
-        <a href="javascript:;" target="_blank">jesse主页</a><span>|</span>
-        <a href="javascript:;" target="_blank">售后服务</a><span>|</span>
-        <a href="javascript:;" target="_blank">关于我们</a><span>|</span>
+        <a href="https://git.imooc.com/jesse20" target="_blank">jesse主页</a
+        ><span>|</span> <a href="javascript:;" target="_blank">售后服务</a
+        ><span>|</span> <a href="javascript:;" target="_blank">关于我们</a
+        ><span>|</span>
         <a href="javascript:;" target="_blank">Vue+SpringBoot</a>
       </div>
       <div class="copyright">

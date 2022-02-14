@@ -2,7 +2,6 @@ import Vue from 'vue'
 import router from './router'
 import axios from "axios"
 import VueAxios from "vue-axios"
-import Vuex from 'vuex'
 import store from './store'
 import App from './App.vue'
 
@@ -18,7 +17,6 @@ axios.interceptors.request.use(function (response) {
   return res;
 })
 
-Vue.use(Vuex)//安装vuex插件
 Vue.use(VueAxios,axios)//安装axios插件和VueAxios插件
 Vue.config.productionTip = false
 

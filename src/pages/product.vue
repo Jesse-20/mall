@@ -1,6 +1,7 @@
 <template>
   <div class="container">
     <loading v-if="loading"></loading>
+    <!-- to-do从接口处获得商品的信息并且进行渲染 -->
     <div v-else class="product">
       商品所属id：{{ $route.params.id }} {{ message }}
     </div>
