@@ -6,5 +6,9 @@ export default {
     //改变登录状态
     changeUserdata({ commit },name) {
         commit('CHANGE_USERDATA', name);
+    },
+    //改变购物车状态
+    changeCartNum({commit},cartNum){
+        commit('CHANGE_CARTNUM',cartNum);
     }
 }

@@ -1,32 +1,30 @@
 <template>
   <div class="floatball">
-    <a href="#" @click="decideGo">
-      <div class="cart0" title="购物车" v-if="!cartNum"></div>
+    <a href="#">
+      <div class="cart0" title="购物车" v-if="cartListNum === 0"></div>
       <div class="cart" title="购物车" v-else></div>
-      <div class="num">({{ cartNum }})</div>
+      <div class="num">({{ cartListNum }})</div>
     </a>
     <div class="backToTop" title="回到顶部">
       <a href="#" @click="backToTop">
-        <!-- 希望将回到顶部和购物车的图标添加到一起 -->
-        <!-- <img class="img1" src="/images/icon-upTo.png" alt="" /> -->
-        <!-- to-do动画的交互 -->
         <img src="/images/backToTop2.png" alt="" />
       </a>
     </div>
   </div>
 </template>
 <script>
+import { mapActions, mapState } from "vuex";
 export default {
   name: "floatball",
   data() {
-    return {
-      cartNum: 0,
-    };
+    return {};
   },
+  computed: mapState(["username", "cartListNum"]),
   mounted() {
     this.getCartNum();
   },
   methods: {
+    ...mapActions(["changeCartNum"]),
     backToTop() {
       //实现方式一回到顶部,scrollTop属性表示被隐藏在内容区域上方的像素数，元素未滚动时，即为顶部
       //document.body.scrollTop = document.documentElement.scrollTop = 0;
@@ -34,15 +32,13 @@ export default {
       scrollTo(0, 0);
     },
     getCartNum() {
-      this.axios.get("/getCartNum").then((res) => {
-        this.cartNum = res.data.data.cartInfo.totalNum;
-      });
-    },
-    decideGo() {
-      if (this.cartNum == 0) {
-        alert("请您先挑选商品");
+      if (this.username == "") {
+        console.log("请您先登录");
       } else {
-        this.$router.push("/cart");
+        this.axios.get("/getCartNum").then((res) => {
+          const cartNum = res.data.data.cartInfo.totalNum;
+          this.changeCartNum(cartNum);
+        });
       }
     },
   },
@@ -76,6 +72,7 @@ export default {
     color: $colorA;
     font-weight: bold;
   }
+
   .backToTop {
     img {
       margin-top: 7px;

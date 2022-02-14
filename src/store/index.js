@@ -7,7 +7,7 @@ Vue.use(Vuex);//使用vue插件
 
 const state = {
     username: '',
-    cartListNum:'',
+    cartListNum: 0,
 }
 
 export default new Vuex.Store({

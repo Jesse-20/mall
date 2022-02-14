@@ -8,7 +8,9 @@
       <div class="right-info">
         <a href="/#/login" v-if="!username">请登录</a
         ><span v-else
-          >{{ username }}&nbsp;&nbsp;&nbsp;&nbsp;<a href="javascript:;"
+          >{{ username }}&nbsp;&nbsp;&nbsp;&nbsp;<a
+            @click="logout"
+            href="javascript:;"
             >退出</a
           ></span
         ><a href="/#/regist" v-if="!username">注册</a
@@ -21,16 +23,21 @@
   </div>
 </template>
 <script>
-import { mapState } from "vuex";
+import { mapActions, mapState } from "vuex";
 export default {
   name: "nav-header",
   data() {
     return {};
   },
-  computed: mapState(["username", "cartListNum"]),
+  computed: mapState(["username"]),
   created() {},
   mounted() {},
-  methods: {},
+  methods: {
+    ...mapActions(["initializeData"]),
+    logout() {
+      this.initializeData();
+    },
+  },
 };
 </script>
 <style lang="scss" scoped>
