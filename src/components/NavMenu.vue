@@ -39,11 +39,13 @@ export default {
     }
   }
   .search {
-    float: right;
+    float: left;
+    margin-left: 140px;
     line-height: 50px;
-    font-size: $fontH;
+    font-size: $fontJ;
     input {
       height: 20px;
+      width: 410px;
     }
     &:after {
       content: "";
@@ -51,7 +53,7 @@ export default {
       border-left: 1px solid $Gcolor;
       display: block;
       position: absolute;
-      right: 3px;
+      right: 344px;
       top: 16px;
       cursor: pointer;
     }
