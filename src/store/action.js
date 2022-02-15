@@ -10,5 +10,9 @@ export default {
     //改变购物车状态
     changeCartNum({commit},cartNum){
         commit('CHANGE_CARTNUM',cartNum);
+    },
+    //改变购物车物件的信息
+    changeCartList({ commit }, cartList) {
+        commit('CHANGE_CARTLIST',cartList)
     }
 }

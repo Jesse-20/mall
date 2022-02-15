@@ -33,7 +33,7 @@ export default {
     },
     getCartNum() {
       if (this.username == "") {
-        console.log("请您先登录");
+        this.$message.warning("您还没有登录呢");
       } else {
         this.axios.get("/getCartNum").then((res) => {
           const cartNum = res.data.data.cartInfo.totalNum;
@@ -43,10 +43,10 @@ export default {
     },
     goToCart() {
       if (this.username == "") {
-        alert("请您先登录!");
+        this.$message("请您先登录!");
         this.$router.push("/#/login");
       } else if (this.cartListNum == 0) {
-        alert("请您先挑选商品!");
+        this.$message("请您先挑选商品!");
       } else {
         this.$router.push("/cart");
       }

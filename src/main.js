@@ -3,6 +3,8 @@ import router from './router'
 import axios from "axios"
 import VueAxios from "vue-axios"
 import store from './store'
+import { Message,Button } from 'element-ui'
+import './assets/scss/element-variables.scss'
 import App from './App.vue'
 
 //配置全局的axios默认值
@@ -17,6 +19,8 @@ axios.interceptors.request.use(function (response) {
   return res;
 })
 
+Vue.use(Button);
+Vue.prototype.$message = Message;
 Vue.use(VueAxios,axios)//安装axios插件和VueAxios插件
 Vue.config.productionTip = false
 

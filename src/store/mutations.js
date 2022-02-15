@@ -1,6 +1,7 @@
 const INITIALIZE_DATA = 'INITIALIZE_DATA'
 const CHANGE_USERDATA = 'CHANGE_USERDATA'
 const CHANGE_CARTNUM = 'CHANGE_CARTNUM'
+const CHANGE_CARTLIST = 'CHANGE_CARTLIST'
 
 export default {
     //初始化信息
@@ -15,5 +16,9 @@ export default {
     //改变购物车的状态信息
     [CHANGE_CARTNUM](state, cartNum) {
         state.cartListNum = cartNum;
+    },
+    //改变购物车物件的信息
+    [CHANGE_CARTLIST](state,cartList) {
+        state.cartList = cartList;
     }
 }
