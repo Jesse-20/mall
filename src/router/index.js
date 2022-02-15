@@ -34,11 +34,6 @@ export default new VueRouter({
                     component: Index,
                 },
                 {
-                    path: '/product/:id',
-                    name: 'product',
-                    component: Product,
-                },
-                {
                     path: '/cart',
                     name: 'cart',
                     component: Cart,
@@ -59,6 +54,11 @@ export default new VueRouter({
             path: '/regist',
             name: 'regist',
             component: Regist,
-        }
+        },
+        {
+            path: '/product/:id',
+            name: 'product',
+            component: Product,
+        },
     ]
 })

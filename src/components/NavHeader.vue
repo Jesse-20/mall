@@ -15,7 +15,15 @@
           ></span
         ><a href="/#/regist" v-if="!username">注册</a
         ><a href="/#/orderList">我的订单</a><a href="">客服服务</a>
-        <a href="">网站导航</a>
+        <div class="lead">
+          网站导航
+          <div class="hidden">
+            <div><a href="/#/cart">购物车</a></div>
+            <div><a href="/#/product/1">热门商品</a></div>
+            <div><a href="/#/product/2">最新产品</a></div>
+            <div><a href="javascript:;" target="_blank">关于我们</a></div>
+          </div>
+        </div>
         <!-- 网页导航栏的动态表示方法需要进行实现 -->
       </div>
       <div></div>
@@ -78,6 +86,40 @@ export default {
       a {
         margin-right: 20px;
         cursor: pointer;
+        &:hover {
+          color: $colorA;
+        }
+      }
+      .lead {
+        position: relative;
+        cursor: pointer;
+        float: right;
+        font-size: 14px;
+        color: #a4a4a4;
+        &:hover {
+          background-color: $Wcolor;
+          color: $colorD;
+          .hidden {
+            display: block;
+            transition: display 0.5s;
+          }
+        }
+        .hidden {
+          text-align: right;
+          display: none;
+          z-index: 10;
+          position: absolute;
+          width: 100px;
+          height: 144px;
+          background-color: $colorD;
+          top: 36px;
+          right: 0;
+          div {
+            &:hover {
+              background-color: $Wcolor;
+            }
+          }
+        }
       }
     }
   }

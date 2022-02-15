@@ -1,6 +1,6 @@
 <template>
   <div class="floatball">
-    <a href="#">
+    <a href="#" @click="goToCart">
       <div class="cart0" title="购物车" v-if="cartListNum === 0"></div>
       <div class="cart" title="购物车" v-else></div>
       <div class="num">({{ cartListNum }})</div>
@@ -39,6 +39,16 @@ export default {
           const cartNum = res.data.data.cartInfo.totalNum;
           this.changeCartNum(cartNum);
         });
+      }
+    },
+    goToCart() {
+      if (this.username == "") {
+        alert("请您先登录!");
+        this.$router.push("/#/login");
+      } else if (this.cartListNum == 0) {
+        alert("请您先挑选商品!");
+      } else {
+        this.$router.push("/cart");
       }
     },
   },
