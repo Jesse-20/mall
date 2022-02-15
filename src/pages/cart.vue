@@ -1,7 +1,6 @@
 <template>
   <div class="container">
-    <loading v-if="loading"></loading>
-    <div v-else class="cartBody">
+    <div class="cartBody">
       <div class="title">
         <div class="left-info">
           <img src="/images/icon-cart3.png" alt="" />
@@ -20,18 +19,13 @@
 </template>
 <script>
 import { mapState, mapActions } from "vuex";
-import loading from "./../components/Loading";
 export default {
   name: "cart",
   data() {
-    return {
-      loading: true,
-    };
+    return {};
   },
   computed: mapState(["username", "cartListNum", "cartList"]),
-  components: {
-    loading,
-  },
+  components: {},
   mounted() {
     this.getCartListDetails();
   },
@@ -44,7 +38,6 @@ export default {
         this.axios.get("/getCartList").then((res) => {
           const cartInfor = res.data.data;
           this.changeCartList(cartInfor);
-          this.loading = false;
         });
       }
     },
