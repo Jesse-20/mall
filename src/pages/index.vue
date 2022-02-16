@@ -29,24 +29,40 @@
       <div class="hot clearfix">
         <h1 class="hot-title">hot-put</h1>
         <a href="javascript:;"><h1 class="forMore">查看更多</h1></a>
-        <!-- to-do获取商品的图片和路由 -->
         <div class="imgshow">
-          <div><a href=""></a></div>
-          <div><a href=""></a></div>
-          <div><a href=""></a></div>
-          <div><a href=""></a></div>
+          <div
+            class="inimgshow"
+            v-for="(item, index) in productHot1"
+            :key="index"
+          >
+            <div>
+              <a :href="'/#/product/' + item.id"
+                ><img :src="item.img" alt=""
+              /></a>
+            </div>
+          </div>
         </div>
+
         <div class="imgshow2">
-          <div><a href=""></a></div>
-          <div><a href=""></a></div>
-          <div><a href=""></a></div>
-          <div><a href=""></a></div>
+          <div
+            class="inimgshow2"
+            v-for="(item, index) in productHot2"
+            :key="index"
+          >
+            <div>
+              <a :href="'/#/product/' + item.id"
+                ><img :src="item.img" alt=""
+              /></a>
+            </div>
+          </div>
         </div>
       </div>
       <!-- 热卖推荐产品结束 -->
       <!-- banner部分开始 -->
       <div class="banner">
-        <img src=" " alt="" />
+        <a :href="'/#/product/' + bannerImg[0].id"
+          ><img :src="bannerImg[0].img" alt=""
+        /></a>
       </div>
       <!-- banner部分结束 -->
       <!--最新产品部分开始-->
@@ -54,19 +70,10 @@
         <h1 class="new-title">new-put</h1>
         <div class="item-swiper">
           <swiper :options="swiperOption">
-            <swiper-slide><img src="/images/slide.png" alt="" /></swiper-slide>
-            <swiper-slide
-              ><img src="/images/product/gallery-3.png" alt=""
-            /></swiper-slide>
-            <swiper-slide
-              ><img src="/images/product/gallery-4.png" alt=""
-            /></swiper-slide>
-            <swiper-slide
-              ><img src="/images/product/gallery-5.jpg" alt=""
-            /></swiper-slide>
-            <swiper-slide
-              ><img src="/images/product/gallery-6.jpg" alt=""
-            /></swiper-slide>
+            <swiper-slide v-for="(item, index) in swiperSlides2" :key="index"
+              ><a :href="'/#/product/' + item.id"
+                ><img :src="item.img" alt="" /></a
+            ></swiper-slide>
             <!-- Optional controls -->
             <div class="swiper-pagination" slot="pagination"></div>
           </swiper>
@@ -137,7 +144,71 @@ export default {
           img: "/images/slide.png",
         },
       ],
+      swiperSlides2: [
+        {
+          id: "0",
+          img: "/images/slide.png",
+        },
+        {
+          id: "1",
+          img: "/images/slide.png",
+        },
+        {
+          id: "2",
+          img: "/images/slide.png",
+        },
+        {
+          id: "3",
+          img: "/images/slide.png",
+        },
+        {
+          id: "4",
+          img: "/images/slide.png",
+        },
+      ],
       ProductList: ["phone", "pad", "book", "details", "model"],
+      productHot1: [
+        {
+          id: "5",
+          img: "/images/slide.png",
+        },
+        {
+          id: "6",
+          img: "/images/slide.png",
+        },
+        {
+          id: "7",
+          img: "/images/slide.png",
+        },
+        {
+          id: "8",
+          img: "/images/slide.png",
+        },
+      ],
+      productHot2: [
+        {
+          id: "9",
+          img: "/images/slide.png",
+        },
+        {
+          id: "10",
+          img: "/images/slide.png",
+        },
+        {
+          id: "11",
+          img: "/images/slide.png",
+        },
+        {
+          id: "12",
+          img: "/images/slide.png",
+        },
+      ],
+      bannerImg: [
+        {
+          id: "15",
+          img: "/images/slide.png",
+        },
+      ],
     };
   },
   mounted() {},
@@ -229,38 +300,52 @@ export default {
       }
     }
     .imgshow {
+      height: 200px;
       margin-top: 32px;
-      display: flex;
-      align-items: center;
+      // display: flex;
+      // align-items: center;
       transition: all 0.2s linear;
-      div {
-        margin-top: 8px;
-        height: 180px;
-        width: 20%;
-        border: 1px solid $colorB;
-        margin-left: 47.448px;
-        &:hover {
-          cursor: pointer;
-          box-shadow: 0 15px 30px rgb(0, 0, 0, 0.1);
-          transform: translate(0, -2px, 0);
+      .inimgshow {
+        div {
+          float: left;
+          margin-top: 8px;
+          height: 180px;
+          width: 20%;
+          margin-left: 47.448px;
+          &:hover {
+            cursor: pointer;
+            box-shadow: 0 15px 30px rgb(0, 0, 0, 0.1);
+            transform: translate(0, -2px, 0);
+          }
+          img {
+            width: 100%;
+            height: 100%;
+          }
         }
       }
     }
     .imgshow2 {
-      display: flex;
-      align-items: center;
+      // display: flex;
+      // align-items: center;
+      height: 200px;
       margin-top: 8px;
       transition: all 0.2s linear;
-      div {
-        margin-top: 8px;
-        height: 180px;
-        width: 20%;
-        border: 1px solid $colorB;
-        margin-left: 47.448px;
-        &:hover {
-          cursor: pointer;
-          box-shadow: 0 15px 30px rgb(0, 0, 0, 0.1);
-          transform: translate(0, -2px, 0);
+      .inimgshow2 {
+        div {
+          float: left;
+          margin-top: 8px;
+          height: 180px;
+          width: 20%;
+          margin-left: 47.448px;
+          &:hover {
+            cursor: pointer;
+            box-shadow: 0 15px 30px rgb(0, 0, 0, 0.1);
+            transform: translate(0, -2px, 0);
+          }
+          img {
+            width: 100%;
+            height: 100%;
+          }
         }
       }
     }
@@ -268,7 +353,6 @@ export default {
   .banner {
     margin-top: 16px;
     height: 100px;
-    border: 1px solid black;
     img {
       width: 100%;
       height: 100%;
