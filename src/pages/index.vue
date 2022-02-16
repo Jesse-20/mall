@@ -21,7 +21,12 @@
       <!-- 轮播图左侧导航栏开始 -->
       <div class="nav">
         <ul v-for="(item, index) in ProductList" :key="index">
-          <li>{{ item }}</li>
+          <div>
+            <li>{{ item }}</li>
+            <div class="navpos">
+              <div class="navhidden">123</div>
+            </div>
+          </div>
         </ul>
       </div>
       <!-- 轮播图左侧导航栏结束 -->
@@ -268,8 +273,17 @@ export default {
         }
         &:hover {
           background-color: $Wcolor;
+          .navhidden {
+            display: none;
+          }
         }
       }
+    }
+    .navhidden {
+      display: none;
+      width: 200px;
+      height: 200px;
+      background-color: black;
     }
   }
   .hot {
