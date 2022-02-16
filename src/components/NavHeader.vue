@@ -14,7 +14,7 @@
             >退出</a
           ></span
         ><a href="/#/regist" v-if="!username">注册</a
-        ><a href="/#/orderList">我的订单</a><a href="">客服服务</a>
+        ><a href="/#/orderList">我的订单</a><a href="javascript:;">客服服务</a>
         <div class="lead">
           网站导航
           <div class="hidden">
