@@ -1,25 +1,18 @@
 <template>
   <div class="container">
-    <nav-header></nav-header>
     <div class="login">
       <button @click="getUserName">click me to login</button>
     </div>
-    <nav-footer></nav-footer>
   </div>
 </template>
 <script>
-import NavHeader from "./../components/NavHeader";
-import NavFooter from "./../components/NavFooter";
 import { mapActions } from "vuex";
 export default {
   name: "login",
   data() {
     return {};
   },
-  components: {
-    NavFooter,
-    NavHeader,
-  },
+  components: {},
   methods: {
     ...mapActions(["changeUserdata"]),
     getUserName() {
@@ -42,9 +35,7 @@ export default {
 }
 .login {
   text-align: center;
-  margin-top: 20px;
   height: 540px;
-  border: 1px solid black;
   margin-bottom: 20px;
   button {
     width: 200px;

@@ -1,15 +1,54 @@
 <template>
   <div class="menu">
-    <div class="icon"><h1>最新商城</h1></div>
-    <!-- 搜索框也需要进行优化使其变得更加美观 -->
-    <div class="search">
-      找不到商品搜索一下吧？<input type="text" placeholder="搜索" />
-    </div>
+    <slot v-if="routeName == 'index'">
+      <div class="icon"><h1>最新商城</h1></div>
+      <!-- 搜索框也需要进行优化使其变得更加美观 -->
+      <div class="search">
+        找不到商品搜索一下吧？<input type="text" placeholder="搜索" />
+      </div>
+    </slot>
+    <slot v-if="routeName == 'login'">
+      <div class="loginContainer">login</div>
+    </slot>
+    <slot v-if="routeName == 'regist'">
+      <div class="registContainer">regist</div>
+    </slot>
+    <slot v-if="routeName == 'orderList'">
+      <div class="orderListContainer">orderList</div>
+    </slot>
+    <slot v-if="routeName == 'cart'">
+      <div class="cartContainer">cart</div>
+    </slot>
+    <slot v-if="routeName == 'product'">
+      <div class="productContianer">product</div>
+    </slot>
   </div>
 </template>
 <script>
+import { mapState, mapActions } from "vuex";
 export default {
   name: "nav-menu",
+  data() {
+    return {};
+  },
+  //计算属性
+  computed: mapState(["routeName"]),
+  //监听属性
+  watch: {
+    $route: {
+      handler: function (route) {
+        this.judgeType(route);
+      },
+      immediate: true,
+    },
+  },
+  methods: {
+    ...mapActions(["getRouteName"]),
+    judgeType(route) {
+      let currentroute = route.name;
+      this.getRouteName(currentroute);
+    },
+  },
 };
 </script>
 <style  lang="scss" scoped>
@@ -57,6 +96,41 @@ export default {
       top: 16px;
       cursor: pointer;
     }
+  }
+  .loginContainer {
+    height: 50px;
+    text-align: center;
+    background-color: $colorD;
+    color: $colorB;
+    font-size: $fontG;
+  }
+  .registContainer {
+    height: 50px;
+    text-align: center;
+    background-color: $colorD;
+    color: $colorB;
+    font-size: $fontG;
+  }
+  .orderListContainer {
+    height: 50px;
+    text-align: center;
+    background-color: $colorD;
+    color: $colorB;
+    font-size: $fontG;
+  }
+  .cartContainer {
+    height: 50px;
+    text-align: center;
+    background-color: $colorD;
+    color: $colorB;
+    font-size: $fontG;
+  }
+  .productContainer {
+    height: 50px;
+    text-align: center;
+    background-color: $colorD;
+    color: $colorB;
+    font-size: $fontG;
   }
 }
 </style>

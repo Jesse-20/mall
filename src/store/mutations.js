@@ -2,6 +2,7 @@ const INITIALIZE_DATA = 'INITIALIZE_DATA'
 const CHANGE_USERDATA = 'CHANGE_USERDATA'
 const CHANGE_CARTNUM = 'CHANGE_CARTNUM'
 const CHANGE_CARTLIST = 'CHANGE_CARTLIST'
+const GET_ROUTETYPE = 'GET_ROUTETYPE'
 
 export default {
     //初始化信息
@@ -20,5 +21,9 @@ export default {
     //改变购物车物件的信息
     [CHANGE_CARTLIST](state,cartList) {
         state.cartList = cartList;
+    },
+    //获取路由的路径信息
+    [GET_ROUTETYPE](state,routeName) {
+        state.routeName = routeName;
     }
 }

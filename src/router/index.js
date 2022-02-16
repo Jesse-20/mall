@@ -42,23 +42,24 @@ export default new VueRouter({
                     path: '/orderList',
                     name: 'orderList',
                     component: OrderList,
-                }
+                },
+                {
+                    path: '/login',
+                    name: 'login',
+                    component: Login,
+                },
+                {
+                    path: '/regist',
+                    name: 'regist',
+                    component: Regist,
+                },
+                {
+                    path: '/product/:id',
+                    name: 'product',
+                    component: Product,
+                },
             ]
         },
-        {
-            path: '/login',
-            name: 'login',
-            component: Login,
-        },
-        {
-            path: '/regist',
-            name: 'regist',
-            component: Regist,
-        },
-        {
-            path: '/product/:id',
-            name: 'product',
-            component: Product,
-        },
+        
     ]
 })

@@ -14,5 +14,9 @@ export default {
     //改变购物车物件的信息
     changeCartList({ commit }, cartList) {
         commit('CHANGE_CARTLIST',cartList)
+    },
+    //获取路由的路径信息
+    getRouteName({ commit }, routeName) {
+        commit('GET_ROUTETYPE',routeName)
     }
 }

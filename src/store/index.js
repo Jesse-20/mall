@@ -9,6 +9,7 @@ const state = {
     username: '',
     cartListNum: 0,
     cartList:[],
+    routeName:'',
 }
 
 export default new Vuex.Store({
