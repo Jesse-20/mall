@@ -15,6 +15,7 @@
       <div></div>
       <div></div>
     </div>
+    <el-pagination :hide-on-single-page="true"></el-pagination>
   </div>
 </template>
 <script>

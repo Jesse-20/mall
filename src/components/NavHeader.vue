@@ -41,12 +41,19 @@ export default {
   },
   computed: mapState(["username"]),
   created() {},
-  mounted() {},
+  mounted() {
+    //this.getUserfromSessionStorage();
+  },
   methods: {
     ...mapActions(["initializeData"]),
     logout() {
       this.initializeData();
+      //window.sessionStorage.removeItem("User");
     },
+    // getUserfromSessionStorage() {
+    //   const Un = window.sessionStorage.getItem("User");
+    //   this.changeUserdata(Un);
+    // },
   },
 };
 </script>

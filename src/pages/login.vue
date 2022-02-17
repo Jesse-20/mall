@@ -19,6 +19,8 @@ export default {
       this.axios.post("/login").then((res) => {
         const username = res.data.data[0].username;
         this.changeUserdata(username);
+        //将对象存储到sessionStorage中
+        //window.sessionStorage.setItem("User", username);
         this.$router.push("/#/index");
       });
     },
