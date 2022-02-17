@@ -7,6 +7,7 @@ import Login from "./../pages/login"
 import Cart from "./../pages/cart"
 import Regist from './../pages/regist'
 import OrderList from "./../pages/orderList"
+import HotProduct from './../pages/hotproduct'
 
 Vue.use(VueRouter);//安装vue-router插件
 
@@ -58,8 +59,12 @@ export default new VueRouter({
                     name: 'product',
                     component: Product,
                 },
+                {
+                    path: '/hot-product',
+                    name: 'hotproduct',
+                    component:HotProduct,
+                }
             ]
         },
-        
     ]
 })

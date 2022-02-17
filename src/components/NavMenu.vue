@@ -20,7 +20,10 @@
       <div class="cartContainer">cart</div>
     </slot>
     <slot v-if="routeName == 'product'">
-      <div class="productContianer">product</div>
+      <div class="productContainer">product</div>
+    </slot>
+    <slot v-if="routeName == 'hotproduct'">
+      <div class="hotproductContainer">hotproduct</div>
     </slot>
   </div>
 </template>
@@ -126,6 +129,13 @@ export default {
     font-size: $fontG;
   }
   .productContainer {
+    height: 50px;
+    text-align: center;
+    background-color: $colorD;
+    color: $colorB;
+    font-size: $fontG;
+  }
+  .hotproductContainer {
     height: 50px;
     text-align: center;
     background-color: $colorD;

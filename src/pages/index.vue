@@ -20,20 +20,20 @@
       <!-- 轮播图部分结束 -->
       <!-- 轮播图左侧导航栏开始 -->
       <div class="nav">
-        <ul v-for="(item, index) in ProductList" :key="index">
-          <div>
-            <li>{{ item }}</li>
-            <div class="navpos">
-              <div class="navhidden">123</div>
+        <div class="navpos">
+          <ul v-for="(item, index) in ProductList" :key="index">
+            <div class="controlbox">
+              <li>{{ item }}</li>
+              <div class="navhidden">to-do</div>
             </div>
-          </div>
-        </ul>
+          </ul>
+        </div>
       </div>
       <!-- 轮播图左侧导航栏结束 -->
       <!-- 热卖推荐产品开始 -->
       <div class="hot clearfix">
         <h1 class="hot-title">hot-put</h1>
-        <a href="javascript:;"><h1 class="forMore">查看更多</h1></a>
+        <a href="/#/hot-product"><h1 class="forMore">查看更多</h1></a>
         <div class="imgshow">
           <div
             class="inimgshow"
@@ -273,17 +273,28 @@ export default {
         }
         &:hover {
           background-color: $Wcolor;
+        }
+      }
+    }
+    .navpos {
+      position: relative;
+      .controlbox {
+        &:hover {
           .navhidden {
-            display: none;
+            display: block;
           }
         }
       }
     }
     .navhidden {
+      left: 179px;
+      top: 0px;
+      z-index: 10;
+      position: absolute;
       display: none;
-      width: 200px;
-      height: 200px;
-      background-color: black;
+      width: 390px;
+      height: 395px;
+      background-color: $colorB;
     }
   }
   .hot {
