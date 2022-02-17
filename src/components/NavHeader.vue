@@ -19,9 +19,11 @@
           网站导航
           <div class="hidden">
             <a href="/#/cart"><div>购物车</div></a>
-            <a href="/#/product/1"><div>热门商品</div></a>
+            <a href="/#/hot-product"><div>热门商品</div></a>
             <a href="/#/product/2"><div>最新产品</div></a>
-            <a href="javascript:;" target="_blank"><div>关于我们</div></a>
+            <a href="https://gitee.com/jesse20/TestDemo" target="_blank"
+              ><div>关于我们</div></a
+            >
           </div>
         </div>
         <!-- 网页导航栏的动态表示方法需要进行实现 -->

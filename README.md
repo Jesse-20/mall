@@ -15,6 +15,7 @@ https://shimo.im/docs/69vw9jWpV9qPYpkH
 1.前后端联调的问题（打算后端弄好注册接口之后再进行注册和登录页面的实现)
 2.支付业务
 3.商品详情页面
+4.商品的售后服务
 
 # 项目运行
 1.git clone https://gitee.com/jesse20/TestDemo.git
