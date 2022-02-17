@@ -14,7 +14,13 @@
       <div class="registContainer">regist</div>
     </slot>
     <slot v-if="routeName == 'orderList'">
-      <div class="orderListContainer">orderList</div>
+      <div class="orderListContainer">
+        <div class="icon">
+          <img src="" alt="" />
+          我的订单
+        </div>
+        <div class="info">这是订单页面哦</div>
+      </div>
     </slot>
     <slot v-if="routeName == 'cart'">
       <div class="cartContainer">cart</div>
@@ -117,7 +123,6 @@ export default {
   .orderListContainer {
     height: 50px;
     text-align: center;
-    background-color: $colorD;
     color: $colorB;
     font-size: $fontG;
   }

@@ -9,8 +9,8 @@ Vue.use(Vuex);//使用vue插件
 const state = {
     username: '',
     cartListNum: 0,
-    cartList:[],
-    routeName:'',
+    cartList: [],
+    routeName: '',
 }
 
 export default new Vuex.Store({
@@ -18,9 +18,9 @@ export default new Vuex.Store({
     actions,
     mutations,
     plugins: [createPersistedState({
-        key:'new',
+        key: 'new',
         //存储在sessionStorage
-        storage:window.sessionStorage,
+        //storage:window.sessionStorage,
         // reducer(val) {
         //     return {
         //         S1:val.username,
