@@ -42,8 +42,10 @@
           >
             <div>
               <a :href="'/#/product/' + item.id"
-                ><img :src="item.img" alt=""
-              /></a>
+                ><img :src="item.img" alt="" />
+                <span class="proudct-info">{{ item.desc }}</span>
+                <span class="price">{{ item.price }}</span>
+              </a>
             </div>
           </div>
         </div>
@@ -56,8 +58,11 @@
           >
             <div>
               <a :href="'/#/product/' + item.id"
-                ><img :src="item.img" alt=""
-              /></a>
+                ><img :src="item.img" alt="" /><span class="proudct-info">{{
+                  item.desc
+                }}</span>
+                <span class="price">{{ item.price }}</span></a
+              >
             </div>
           </div>
         </div>
@@ -176,42 +181,60 @@ export default {
         {
           id: "5",
           img: "/images/slide.png",
+          desc: "Compiled successfully in 847ms",
+          price: 1000,
         },
         {
           id: "6",
           img: "/images/slide.png",
+          desc: "Compiled successfully in 847ms",
+          price: 2000,
         },
         {
           id: "7",
           img: "/images/slide.png",
+          desc: "Compiled successfully in 847ms",
+          price: 3000,
         },
         {
           id: "8",
           img: "/images/slide.png",
+          desc: "Compiled successfully in 847ms",
+          price: 4000,
         },
       ],
       productHot2: [
         {
           id: "9",
           img: "/images/slide.png",
+          desc: "Compiled successfully in 847ms",
+          price: 5000,
         },
         {
           id: "10",
           img: "/images/slide.png",
+          desc: "Compiled successfully in 847ms",
+          price: 3000,
         },
         {
           id: "11",
           img: "/images/slide.png",
+          desc: "Compiled successfully in 847ms",
+          price: 5000,
         },
         {
           id: "12",
           img: "/images/slide.png",
+          desc: "Compiled successfully in 847ms",
+          price: 6000,
         },
       ],
       bannerImg: [
         {
           id: "15",
           img: "/images/slide.png",
+          desc: "Compiled successfully in 847ms",
+          price: 7000,
         },
       ],
     };
@@ -331,7 +354,9 @@ export default {
       // align-items: center;
       transition: all 0.2s linear;
       .inimgshow {
+        text-align: center;
         div {
+          position: relative;
           float: left;
           margin-top: 8px;
           height: 180px;
@@ -356,6 +381,7 @@ export default {
       margin-top: 8px;
       transition: all 0.2s linear;
       .inimgshow2 {
+        text-align: center;
         div {
           float: left;
           margin-top: 8px;
