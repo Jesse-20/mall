@@ -8,10 +8,23 @@
       </div>
     </slot>
     <slot v-if="routeName == 'login'">
-      <div class="loginContainer">login</div>
+      <div class="loginContainer">
+        <div class="icon2">
+          <img src="/images/login.png" alt="" />
+          欢迎登录
+        </div>
+        <div class="information">
+          <a href="/#/product/2">~查看最新产品动向~</a>
+        </div>
+      </div>
     </slot>
     <slot v-if="routeName == 'regist'">
-      <div class="registContainer">regist</div>
+      <div class="registContainer">
+        <div class="icon2">
+          <img src="/images/registicon.png" alt="" />
+          加入最新商城
+        </div>
+      </div>
     </slot>
     <slot v-if="routeName == 'orderList'">
       <div class="orderListContainer">
@@ -107,16 +120,59 @@ export default {
     }
   }
   .loginContainer {
+    .information {
+      margin-right: -300px;
+      position: relative;
+      line-height: 50px;
+      float: right;
+      font-size: $fontI;
+      a {
+        color: $colorD;
+        &:hover {
+          color: $colorB;
+        }
+      }
+      &:before {
+        position: absolute;
+        top: 10px;
+        left: -20px;
+        content: "";
+        @include bgImg(25px, 25px, "/images/pointright.png");
+      }
+      &:after {
+        position: absolute;
+        top: 10px;
+        right: -20px;
+        content: "";
+        @include bgImg(25px, 25px, "/images/pointleft.png");
+      }
+    }
+    .icon2 {
+      margin-left: -150px;
+      line-height: 50px;
+      text-align: center;
+      float: left;
+      img {
+        width: 20px;
+        height: 20px;
+      }
+    }
     height: 50px;
-    text-align: center;
-    background-color: $colorD;
     color: $colorB;
     font-size: $fontG;
   }
   .registContainer {
+    .icon2 {
+      margin-left: -150px;
+      line-height: 50px;
+      text-align: center;
+      float: left;
+      img {
+        width: 20px;
+        height: 20px;
+      }
+    }
     height: 50px;
-    text-align: center;
-    background-color: $colorD;
     color: $colorB;
     font-size: $fontG;
   }
