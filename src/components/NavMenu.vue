@@ -28,8 +28,8 @@
     </slot>
     <slot v-if="routeName == 'orderList'">
       <div class="orderListContainer">
-        <div class="icon">
-          <img src="" alt="" />
+        <div class="icon2">
+          <img src="/images/icon-order.png" alt="" />
           我的订单
         </div>
         <div class="info">这是订单页面哦</div>
@@ -121,7 +121,7 @@ export default {
   }
   .loginContainer {
     .information {
-      margin-right: -300px;
+      margin-right: 100px;
       position: relative;
       line-height: 50px;
       float: right;
@@ -178,7 +178,16 @@ export default {
   }
   .orderListContainer {
     height: 50px;
-    text-align: center;
+    .icon2 {
+      margin-left: -150px;
+      line-height: 50px;
+      text-align: center;
+      float: left;
+      img {
+        width: 20px;
+        height: 20px;
+      }
+    }
     color: $colorB;
     font-size: $fontG;
   }
